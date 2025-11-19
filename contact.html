@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="栃木経営支援へのお問い合わせ。無料相談受付中。経営の悩み、WEB戦略、地域プロジェクトなど、お気軽にご相談ください。">
+  <title>お問い合わせ - irohaコンサルティング</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: var(--bg-white);
+      padding: 3rem;
+      border-radius: 20px;
+      height: fit-content;
+    }
+    
+    .contact-info h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-info p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    .contact-details {
+      list-style: none;
+    }
+    
+    .contact-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .contact-details i {
+      font-size: 1.25rem;
+      margin-top: 0.25rem;
+    }
+    
+    .contact-details strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-form-container {
+      background-color: var(--bg-white);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .form-group {
+      margin-bottom: 2rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .required {
+      color: #ef4444;
+      font-size: 0.85rem;
+      margin-left: 0.25rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background-color: var(--bg-white);
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .form-note {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 1.25rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: var(--bg-white);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .flow-section {
+      background-color: var(--bg-gray-50);
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      margin-top: 4rem;
+    }
+    
+    .flow-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: var(--text-primary);
+    }
+    
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .flow-step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .flow-step::after {
+      content: '→';
+      position: absolute;
+      top: 30px;
+      right: -2rem;
+      font-size: 2rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .flow-step:last-child::after {
+      display: none;
+    }
+    
+    .flow-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: var(--bg-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+    
+    .flow-step h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .flow-step p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .faq-section {
+      margin-top: 4rem;
+    }
+    
+    .faq-item {
+      background-color: var(--bg-white);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+    
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .faq-question i {
+      color: var(--primary-color);
+    }
+    
+    .faq-answer {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding-left: 2rem;
+    }
+    
+    @media (max-width: 968px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .flow-step::after {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .contact-info,
+      .contact-form-container {
+        padding: 2rem;
+      }
+      
+      .flow-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <!-- ロゴ画像を使用する場合は下記のコメントを外してください -->
+        <!-- <img src="images/logo.png" alt="栃木経営支援" class="logo-image"> -->
+        
+        <!-- 画像がない場合はアイコンとテキストを表示 -->
+        <i class="fas fa-mountain logo-icon"></i>
+        <span class="logo-text">irohaコンサルティング</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">ホーム</a>
+        <a href="services.html">サービス</a>
+        <a href="about.html">運営者情報</a>
+        <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.5rem;">お問い合わせ</a>
+      </nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <section class="hero contact-hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">CONTACT</p>
+      <h1 class="hero-title">お問い合わせ</h1>
+      <p class="hero-description">
+        まずはお気軽にご相談ください。<br>
+        初回相談は無料です。
+      </p>
+    </div>
+  </section>
+
+  <!-- お問い合わせフォーム -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-container">
+        <!-- 連絡先情報 -->
+        <div class="contact-info">
+          <h3><i class="fas fa-info-circle"></i> お問い合わせについて</h3>
+          <p>
+            経営の悩み、WEB戦略、地域プロジェクト、人材課題など、
+            どんな小さなことでも構いません。
+            まずはお気軽にご相談ください。
+          </p>
+          <ul class="contact-details">
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>メールアドレス</strong>
+                info@example.com
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>電話番号</strong>
+                028-XXX-XXXX<br>
+                <small>受付時間: 平日 9:00-18:00</small>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>所在地</strong>
+                栃木県宇都宮市
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>営業時間</strong>
+                平日 9:00-18:00<br>
+                <small>※土日祝は事前予約制</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- お問い合わせフォーム -->
+        <div class="contact-form-container">
+          <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin-bottom: 2rem;">
+            お問い合わせフォーム
+          </h3>
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">
+                お名前 <span class="required">必須</span>
+              </label>
+              <input type="text" id="name" name="name" required placeholder="山田 太郎">
+            </div>
+
+            <div class="form-group">
+              <label for="company">
+                会社名・団体名
+              </label>
+              <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                メールアドレス <span class="required">必須</span>
+              </label>
+              <input type="email" id="email" name="email" required placeholder="example@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">
+                電話番号
+              </label>
+              <input type="tel" id="phone" name="phone" placeholder="028-123-4567">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">
+                お問い合わせ種別 <span class="required">必須</span>
+              </label>
+              <select id="subject" name="subject" required>
+                <option value="">選択してください</option>
+                <option value="経営コンサル">経営コンサルティングについて</option>
+                <option value="WEBマーケティング">WEBマーケティングについて</option>
+                <option value="ポータル">ポータル事業について</option>
+                <option value="コーディネート">コーディネート事業について</option>
+                <option value="無料相談">無料相談を希望</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">
+                お問い合わせ内容 <span class="required">必須</span>
+              </label>
+              <textarea id="message" name="message" required placeholder="具体的なご相談内容をお書きください。現在の課題や、ご希望の支援内容などをお聞かせいただけると幸いです。"></textarea>
+              <p class="form-note">
+                ※ 個人情報は、お問い合わせへの対応以外には使用いたしません。
+              </p>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i>
+              送信する
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相談の流れ -->
+  <section class="section">
+    <div class="container">
+      <div class="flow-section">
+        <h3 class="flow-title">ご相談の流れ</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-number">1</div>
+            <h4>お問い合わせ</h4>
+            <p>フォームまたはお電話でご連絡</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">2</div>
+            <h4>日程調整</h4>
+            <p>無料相談の日時を調整</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">3</div>
+            <h4>無料相談</h4>
+            <p>現状と課題をヒアリング<br><small>（60-90分程度）</small></p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">4</div>
+            <h4>ご提案</h4>
+            <p>最適なソリューションをご提案</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">5</div>
+            <h4>支援開始</h4>
+            <p>合意後、伴走支援をスタート</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">FAQ</p>
+        <h2 class="section-title">よくあるご質問</h2>
+      </div>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            相談は本当に無料ですか?
+          </div>
+          <div class="faq-answer">
+            はい、初回の相談は完全無料です。現状をお聞かせいただき、どのような支援ができるかをご提案させていただきます。
+            その後、ご納得いただいた場合のみ正式なご契約となります。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            栃木県外の企業でも相談できますか?
+          </div>
+          <div class="faq-answer">
+            もちろん可能です。オンラインでのご相談にも対応しております。
+            ただし、栃木県内の企業様への支援を専門としているため、県外の場合は内容によってはお受けできない場合もございます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            どのような相談が多いですか?
+          </div>
+          <div class="faq-answer">
+            経営課題の整理、マネジメント強化、WEB集客の改善、新規事業の立ち上げ、人材育成などのご相談が多いです。
+            また、漠然とした悩みでも構いません。対話の中で課題を明確にしていきます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            料金体系を教えてください
+          </div>
+          <div class="faq-answer">
+            サービス内容によって異なります。月額顧問契約、プロジェクト型、成功報酬型など、
+            お客様のニーズに合わせた料金プランをご提案いたします。詳しくは各サービスページをご覧ください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            短期間のスポット相談も可能ですか?
+          </div>
+          <div class="faq-answer">
+            はい、可能です。継続的な支援だけでなく、単発のコンサルティングや研修実施なども承っております。
+            お気軽にご相談ください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            守秘義務は守られますか?
+          </div>
+          <div class="faq-answer">
+            もちろんです。ご相談いただいた内容、企業情報はすべて厳守いたします。
+            必要に応じて秘密保持契約（NDA）の締結も可能です。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">一緒に、前へ進みましょう</h2>
+      <p class="cta-description">
+        あなたの想い、悩み、ビジョンを聞かせてください。<br>
+        まずは無料相談から始めましょう。<br>
+        お気軽にお問い合わせください。
+      </p>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <!-- ロゴ画像を使用する場合は下記のコメントを外してください -->
+            <!-- <img src="images/logo-white.png" alt="栃木経営支援" class="footer-logo-image"> -->
+            
+            <!-- 画像がない場合はアイコンとテキストを表示 -->
+            <i class="fas fa-mountain footer-logo-icon"></i>
+            <span class="footer-logo-text">irohaコンサルティング</span>
+          </div>
+          <p>
+            AIで栃木の経営の常識を変える
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>サービス</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#consulting">経営コンサル事業</a></li>
+            <li><a href="services.html#marketing">WEBマーケティング事業</a></li>
+            <li><a href="services.html#portal">ポータル事業</a></li>
+            <li><a href="services.html#medical">医療支援事業</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>コンテンツ</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">運営者情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>お問い合わせ</h3>
+          <p>
+            <i class="fas fa-envelope"></i>
+            info@example.com
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            028-XXX-XXXX
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            栃木県宇都宮市
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 irohaコンサルティング. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
